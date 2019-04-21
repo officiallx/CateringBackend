@@ -8,15 +8,21 @@ public class Staff {
 
     @Id
     @GeneratedValue
+    @Column(name = "staff_id")
     private Long staffId;
+
     @Column(name = "staff_fname")
     private String staffFname;
+
     @Column(name = "staff_lname")
     private String staffLname;
+
     @Column(name = "staff_contact")
     private String staffContact;
+
     @Column(name = "staff_email")
     private String staffEmail;
+
     @Column(name = "staff_address")
     private String staffAddress;
 
@@ -78,5 +84,17 @@ public class Staff {
 
     public void setStaffId(Long staffId) {
         this.staffId = staffId;
+    }
+
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "staffId=" + staffId +
+                ", staffFname='" + staffFname + '\'' +
+                ", staffLname='" + staffLname + '\'' +
+                ", staffContact='" + staffContact + '\'' +
+                ", staffEmail='" + staffEmail + '\'' +
+                ", staffAddress='" + staffAddress + '\'' +
+                '}';
     }
 }

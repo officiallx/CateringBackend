@@ -10,12 +10,14 @@ public class Item {
     @GeneratedValue
     @Column(name = "item_id")
     private Long itemId;
-    @Column(name = "item_name")
+    @Column(name = "item_name", nullable = false)
     private String itemName;
-    @Column (name = "item_description")
+    @Column (name = "item_description", nullable = false)
     private String itemDescription;
+    @Column(name = "item_guests", nullable = false)
+    private String itemGuests;
 
-    @JoinColumn
+    @JoinColumn(name = "menu")
     @ManyToOne
     private Menu menu;
 
@@ -23,9 +25,10 @@ public class Item {
 
     }
 
-    public Item(String itemName, String itemDescription, Long menuId) {
+    public Item(String itemName, String itemDescription, String itemGuests, Long menuId) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
+        this.itemGuests = itemGuests;
         this.menu = new Menu(menuId, "");
     }
 
@@ -59,5 +62,23 @@ public class Item {
 
     public void setMenu(Menu menu) {
         this.menu = menu;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemId=" + itemId +
+                ", itemName='" + itemName + '\'' +
+                ", itemDescription='" + itemDescription + '\'' +
+                ", menu=" + menu +
+                '}';
+    }
+
+    public String getItemGuests() {
+        return itemGuests;
+    }
+
+    public void setItemGuests(String itemGuests) {
+        this.itemGuests = itemGuests;
     }
 }

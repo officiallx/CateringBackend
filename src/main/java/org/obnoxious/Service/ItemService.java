@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ItemService {
@@ -17,8 +18,8 @@ public class ItemService {
         return itemRepository.findByMenu_MenuId(menuId);
     }
 
-    public Item getItem(Long itemId){
-        return itemRepository.findOne(itemId);
+    public Optional<Item> getItem(Long itemId){
+        return itemRepository.findById(itemId);
     }
 
     public void addItem(Item item){
@@ -30,6 +31,6 @@ public class ItemService {
     }
 
     public void deleteItem(Long itemId) {
-        itemRepository.delete(itemId);
+        itemRepository.deleteById(itemId);
     }
 }

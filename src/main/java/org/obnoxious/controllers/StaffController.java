@@ -1,43 +1,43 @@
 package org.obnoxious.controllers;
 
+import org.obnoxious.Service.StaffService;
 import org.obnoxious.entities.Staff;
-import org.obnoxious.repositories.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class StaffController {
     @Autowired
-    private StaffRepository staffRepository;
+    private StaffService staffService;
 
     @GetMapping("/staffs")
     public List<Staff> getAllStaff() {
-        return (List<Staff>) staffRepository.findAll();
+        return staffService.getAllStaff();
     }
 
     @GetMapping("/staff/{staffId}")
-    public Staff getStaff(@PathVariable Long staffId) {
-        return staffRepository.findOne(staffId);
+    public Optional<org.obnoxious.entities.Staff> getStaff(@PathVariable Long staffId) {
+       return staffService.getStaff(staffId);
     }
 
     @DeleteMapping("/staff/{staffId}")
-    public boolean deleteStaff(@PathVariable Long staffId) {
-        staffRepository.delete(staffId);
-        return true;
+    public void deleteStaff(@PathVariable Long staffId) {
+        staffService.deleteStaff(staffId);
     }
 
-    @PutMapping("/staff")
-    public Staff updateStaff(@RequestBody Staff staff) {
-        return staffRepository.save(staff);
+    @PutMapping("/staff/{staffId}")
+    public void updateStaff(@RequestBody Staff staff, @PathVariable Long staffId) {
+        staffService.updateStaff(staffId, staff);
     }
 
     @PostMapping("/staff")
-    public Staff createStaff(@RequestBody Staff staff) {
-        return staffRepository.save(staff);
+    public void createStaff(@RequestBody Staff staff) {
+        staffService.addStaff(staff);
     }
 
 }

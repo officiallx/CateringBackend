@@ -8,8 +8,10 @@ public class Menu {
 
     @Id
     @GeneratedValue
+    @Column(name = "menu_id")
     private Long menuId;
-    @Column(name = "menu_name")
+
+    @Column(name = "menu_name", nullable=false)
     private String menuName;
 
     public Menu() {
@@ -35,5 +37,13 @@ public class Menu {
 
     public void setMenuName(String menuName) {
         this.menuName = menuName;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "menuId=" + menuId +
+                ", menuName='" + menuName + '\'' +
+                '}';
     }
 }
