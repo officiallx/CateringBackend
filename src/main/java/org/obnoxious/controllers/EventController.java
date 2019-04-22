@@ -52,12 +52,12 @@ public class EventController {
 
     @PostMapping( value = "/event", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public AppResponse createEvent(
-            @RequestParam(value = AppConstants.EMPLOYEE_JSON_PARAM, required = true) String eventJson,
-            @RequestParam(required = true, value = AppConstants.EMPLOYEE_FILE_PARAM) MultipartFile file)
-            throws JsonParseException, JsonMappingException, IOException {
+            @RequestParam(value = AppConstants.EVENT_JSON_PARAM, required = true) String eventJson,
+            @RequestParam(required = true, value = AppConstants.EVENT_FILE_PARAM) MultipartFile file)
+            throws IOException {
 
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("http://100.64.201.136:8080").path(AppConstants.DOWNLOAD_PATH)
+        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("http://192.168.100.24:8080").path(AppConstants.DOWNLOAD_PATH)
                 .path(fileName).toUriString();
         Event event = objectMapper.readValue(eventJson, Event.class);
         event.setProfilePath(fileDownloadUri);

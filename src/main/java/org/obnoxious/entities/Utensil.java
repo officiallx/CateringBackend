@@ -20,14 +20,19 @@ public class Utensil {
     @Column(name = "u_charge")
     private String uCharge;
 
+    @JoinColumn(name = "available")
+    @OneToOne(cascade = {CascadeType.ALL})
+    private Available uAvailable;
+
     public Utensil(){
 
     }
 
-    public Utensil(String uName, String uDescription, String uCharge) {
+    public Utensil(String uName, String uDescription, String uCharge, Available uAvailable) {
         this.uName = uName;
         this.uDescription = uDescription;
         this.uCharge = uCharge;
+        this.uAvailable = uAvailable;
     }
 
     public Long getuId() {
@@ -62,4 +67,11 @@ public class Utensil {
         this.uCharge = uCharge;
     }
 
+    public Available getuAvailable() {
+        return uAvailable;
+    }
+
+    public void setuAvailable(Available uAvailable) {
+        this.uAvailable = uAvailable;
+    }
 }

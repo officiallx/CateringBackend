@@ -8,34 +8,35 @@ public class Staff {
 
     @Id
     @GeneratedValue
-    @Column(name = "staff_id")
     private Long staffId;
-
     @Column(name = "staff_fname")
     private String staffFname;
-
     @Column(name = "staff_lname")
     private String staffLname;
-
     @Column(name = "staff_contact")
     private String staffContact;
-
     @Column(name = "staff_email")
     private String staffEmail;
 
-    @Column(name = "staff_address")
-    private String staffAddress;
+    @JoinColumn(name = "address")
+    @OneToOne(cascade = {CascadeType.ALL})
+    private Address staffAddress;
+
+    @JoinColumn(name = "position")
+    @OneToOne(cascade = {CascadeType.ALL})
+    private Position staffPosition;
 
     public Staff(){
 
     }
 
-    public Staff(String staffFname, String staffLname, String staffContact, String staffEmail, String staffAddress) {
+    public Staff(String staffFname, String staffLname, String staffContact, String staffEmail, String staffPosition) {
         this.staffFname = staffFname;
         this.staffLname = staffLname;
         this.staffContact = staffContact;
         this.staffEmail = staffEmail;
-        this.staffAddress = staffAddress;
+        this.staffAddress = new Address("");
+        this.staffPosition = new Position("");
     }
 
     public String getStaffFname() {
@@ -70,11 +71,11 @@ public class Staff {
         this.staffEmail = staffEmail;
     }
 
-    public String getStaffAddress() {
+    public Address getStaffAddress() {
         return staffAddress;
     }
 
-    public void setStaffAddress(String staffAddress) {
+    public void setStaffAddress(Address staffAddress) {
         this.staffAddress = staffAddress;
     }
 
@@ -96,5 +97,13 @@ public class Staff {
                 ", staffEmail='" + staffEmail + '\'' +
                 ", staffAddress='" + staffAddress + '\'' +
                 '}';
+    }
+
+    public Position getStaffPosition() {
+        return staffPosition;
+    }
+
+    public void setStaffPosition(Position staffPosition) {
+        this.staffPosition = staffPosition;
     }
 }

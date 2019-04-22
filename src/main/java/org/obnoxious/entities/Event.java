@@ -19,7 +19,8 @@ public class Event {
 
     }
 
-    public Event(String eventName, String profilePath) {
+    public Event(Long eventId, String eventName, String profilePath) {
+        this.eventId = eventId;
         this.eventName = eventName;
         this.profilePath = profilePath;
     }

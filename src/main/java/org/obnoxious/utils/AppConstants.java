@@ -2,11 +2,11 @@ package org.obnoxious.utils;
 
 public class AppConstants {
 
-	public static final String EMPLOYEE_URI = "/employees";
-	public static final String EMPLOYEE_JSON_PARAM = "empJson";
-	public static final String EMPLOYEE_FILE_PARAM = "file";
-	public static final String SUCCESS_CODE = "EMP-200";
-	public static final String SUCCESS_MSG = "Employee created successfully";
+	public static final String EVENT_JSON_PARAM = "event";
+	public static final String PACKAGE_JSON_PARAM = "package";
+	public static final String EVENT_FILE_PARAM = "file";
+	public static final String SUCCESS_CODE = "200";
+	public static final String SUCCESS_MSG = "Event created successfully";
 	public static final String FILE_SEPERATOR = "_";
 	public static final String DOWNLOAD_PATH = "/uploads/";
 //	public static final String DOWNLOAD_URI = "/downloadFile/{fileName:.+}";
