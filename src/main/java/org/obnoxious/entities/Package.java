@@ -9,15 +9,15 @@ public class Package {
     @Id
     @GeneratedValue
     @Column(name = "package_id")
-    private Long packageId;
+    private Long apackageId;
     @Column(name = "package_type", nullable = false)
-    private String packageType;
+    private String apackageType;
     @Column (name = "package_decription", nullable = false)
-    private String packageDescription;
+    private String apackageDescription;
     @Column(name = "package_price", nullable = false)
-    private String packagePrice;
+    private String apackagePrice;
     @Column(name = "profile_path")
-    private String profilePath;
+    private String aprofilePath;
 
     @JoinColumn(name = "event")
     @ManyToOne
@@ -27,44 +27,45 @@ public class Package {
 
     }
 
-    public Package(String packageType, String packageDescription, String packagePrice, String profilePath, Event event) {
-        this.packageType = packageType;
-        this.packageDescription = packageDescription;
-        this.packagePrice = packagePrice;
-        this.profilePath = profilePath;
-        this.event = event;
+    public Package(Long apackageId, String apackageType, String apackageDescription, String apackagePrice, String aprofilePath, Long eventId) {
+        this.apackageId = apackageId;
+        this.apackageType = apackageType;
+        this.apackageDescription = apackageDescription;
+        this.apackagePrice = apackagePrice;
+        this.aprofilePath = aprofilePath;
+        this.event = new Event(eventId,"","");
     }
 
     public Long getPackageId() {
-        return packageId;
+        return apackageId;
     }
 
     public void setPackageId(Long packageId) {
-        this.packageId = packageId;
+        this.apackageId = packageId;
     }
 
     public String getPackageType() {
-        return packageType;
+        return apackageType;
     }
 
     public void setPackageType(String packageType) {
-        this.packageType = packageType;
+        this.apackageType = packageType;
     }
 
     public String getPackageDescription() {
-        return packageDescription;
+        return apackageDescription;
     }
 
     public void setPackageDescription(String packageDescription) {
-        this.packageDescription = packageDescription;
+        this.apackageDescription = packageDescription;
     }
 
     public String getPackagePrice() {
-        return packagePrice;
+        return apackagePrice;
     }
 
     public void setPackagePrice(String packagePrice) {
-        this.packagePrice = packagePrice;
+        this.apackagePrice = packagePrice;
     }
 
     public Event getEvent() {
@@ -78,19 +79,19 @@ public class Package {
     @Override
     public String toString() {
         return "Package{" +
-                "packageId=" + packageId +
-                ", packageType='" + packageType + '\'' +
-                ", packageDescription='" + packageDescription + '\'' +
-                ", packagePrice='" + packagePrice + '\'' +
+                "packageId=" + apackageId +
+                ", packageType='" + apackageType + '\'' +
+                ", packageDescription='" + apackageDescription + '\'' +
+                ", packagePrice='" + apackagePrice + '\'' +
                 ", event=" + event +
                 '}';
     }
 
     public String getProfilePath() {
-        return profilePath;
+        return aprofilePath;
     }
 
     public void setProfilePath(String profilePath) {
-        this.profilePath = profilePath;
+        this.aprofilePath = profilePath;
     }
 }

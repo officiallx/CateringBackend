@@ -13,9 +13,9 @@ public class EventDateTime {
     @GeneratedValue
     @Column(name = "event_dat_id")
     private Long eventDatId;
-    @Column(name = "event_date", nullable = false)
+    @Column(name = "event_date")
     private String eventDate;
-    @Column(name = "event_time", nullable = false)
+    @Column(name = "event_time")
     private String eventTime;
     @Column(name = "guest_count")
     private String guest_count;

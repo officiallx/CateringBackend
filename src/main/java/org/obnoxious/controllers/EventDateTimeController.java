@@ -16,28 +16,28 @@ public class EventDateTimeController {
     @Autowired
     private EventDateTimeService eventDateTimeService;
 
-    @GetMapping("/eventtime")
+    @GetMapping("/datetime")
     public List<EventDateTime> getAllEventTimes(){
         return eventDateTimeService.getAllEvent();
     }
 
-    @GetMapping("/eventtime/{eventDatId}")
+    @GetMapping("/datetime/{eventDatId}")
     public Optional<EventDateTime> getEventTime(@PathVariable Long eventDatId){
         return eventDateTimeService.getEvent(eventDatId);
     }
 
-    @DeleteMapping("/eventtime/{eventDatId}")
+    @DeleteMapping("/datetime/{eventDatId}")
     public void deleteEventTime(@PathVariable Long eventDatId){
         eventDateTimeService.deleteEvent(eventDatId);
     }
 
-    @PutMapping("/eventtime/{eventId}")
-    public void updateEventTime(@RequestBody EventDateTime eventtime, @PathVariable Long eventId){
-        eventDateTimeService.updateEvent(eventtime);
+    @PutMapping("/datetime/{eventDatId}")
+    public void updateEventTime(@RequestBody EventDateTime datetime, @PathVariable Long eventDatId){
+        eventDateTimeService.updateEvent(datetime);
     }
 
-    @PostMapping("/eventtime")
-    public void addEventTime(@RequestBody EventDateTime eventId){
-        eventDateTimeService.addEvent(eventId);
+    @PostMapping("/datetime")
+    public void addEventTime(@RequestBody EventDateTime datetime){
+        eventDateTimeService.addEvent(datetime);
     }
 }

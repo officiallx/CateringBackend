@@ -4,6 +4,7 @@ public class AppConstants {
 
 	public static final String EVENT_JSON_PARAM = "event";
 	public static final String PACKAGE_JSON_PARAM = "package";
+	public static final String BREAKFAST_JSON_PARAM = "breakfast";
 	public static final String EVENT_FILE_PARAM = "file";
 	public static final String SUCCESS_CODE = "200";
 	public static final String SUCCESS_MSG = "Event created successfully";

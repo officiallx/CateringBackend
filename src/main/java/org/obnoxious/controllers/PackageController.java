@@ -2,7 +2,6 @@ package org.obnoxious.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.obnoxious.Service.FileStorageService;
-import org.obnoxious.Service.ItemService;
 import org.obnoxious.Service.PackageService;
 import org.obnoxious.entities.*;
 import org.obnoxious.entities.Package;

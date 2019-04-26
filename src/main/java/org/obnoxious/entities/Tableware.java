@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "utensil")
-public class Utensil {
+public class Tableware {
 
     @Id
     @GeneratedValue
@@ -24,11 +24,11 @@ public class Utensil {
     @OneToOne(cascade = {CascadeType.ALL})
     private Available uAvailable;
 
-    public Utensil(){
+    public Tableware(){
 
     }
 
-    public Utensil(String uName, String uDescription, String uCharge, Available uAvailable) {
+    public Tableware(String uName, String uDescription, String uCharge, Available uAvailable) {
         this.uName = uName;
         this.uDescription = uDescription;
         this.uCharge = uCharge;
