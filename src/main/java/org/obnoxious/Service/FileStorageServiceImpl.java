@@ -1,5 +1,6 @@
 package org.obnoxious.Service;
 
+import org.obnoxious.Service.FileStorageService;
 import org.obnoxious.config.FileStorageProperties;
 import org.obnoxious.exception.FileStorageException;
 import org.obnoxious.exception.MyFileNotFoundException;

@@ -1,0 +1,43 @@
+package org.obnoxious.controllers;
+
+import org.obnoxious.Service.OrderService;
+import org.obnoxious.entities.Order;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+public class OrderController {
+
+    @Autowired
+    private OrderService orderService;
+
+    @GetMapping("/order")
+    public List<Order> getAllOrder() {
+        return orderService.getAllOrder();
+    }
+
+    @GetMapping("/order/{orderId}")
+    public Optional<Order> getOrder(@PathVariable Long orderId) {
+        return orderService.getOrder(orderId);
+    }
+
+    @DeleteMapping("/order/{orderId}")
+    public void deleteOrder(@PathVariable Long orderId) {
+        orderService.deleteOrder(orderId);
+    }
+
+    @PutMapping("/order/{orderId}")
+    public void updateOrder(@RequestBody Order order, @PathVariable Long orderId) {
+        orderService.updateOrder(orderId, order);
+    }
+
+    @PostMapping("/order")
+    public void addOrder(@RequestBody Order order) {
+        orderService.addOrder(order);
+    }
+}
