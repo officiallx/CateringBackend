@@ -1,15 +1,20 @@
 package org.obnoxious.controllers;
 
+import org.obnoxious.Service.impl.UserDetailsServiceImpl;
 import org.obnoxious.entities.ApplicationUser;
 import org.obnoxious.repositories.ApplicationUserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api")
 public class UserController {
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
+
     private ApplicationUserRepository applicationUserRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     public UserController(ApplicationUserRepository applicationUserRepository,
@@ -21,5 +26,15 @@ public class UserController {
     public void signUp(@RequestBody ApplicationUser user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         applicationUserRepository.save(user);
+    }
+
+    @GetMapping("/users")
+    public List<ApplicationUser> getAllUsers() {
+        return userDetailsService.getAllUsers();
+    }
+
+    @GetMapping("/users/{username}")
+    public ApplicationUser getUser(@PathVariable String username) {
+        return userDetailsService.getUser(username);
     }
 }

@@ -20,6 +20,9 @@ public class Order {
 
     private String eventAddress;
 
+    @JoinColumn(name = "user_id")
+    private Long userId;
+
    /* @JoinColumn
     @OneToOne(cascade = CascadeType.ALL)
     private Package aPackage;*/
@@ -27,10 +30,11 @@ public class Order {
     public Order() {
     }
 
-    public Order(String packageName, String eventVenue, String eventAddress) {
+    public Order(String packageName, String eventVenue, String eventAddress, Long userId) {
         this.packageName = packageName;
         this.eventVenue = eventVenue;
         this.eventAddress = eventAddress;
+        this.userId = userId;
     }
 
     public String getPackageName() {
@@ -65,4 +69,11 @@ public class Order {
         this.eventAddress = eventAddress;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 }

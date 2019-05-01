@@ -10,7 +10,7 @@ public class Lunch {
     @GeneratedValue
     private Long lunchId;
     @Column(name = "lunch_name")
-    private String breakfastName;
+    private String lunchName;
 
     @JoinColumn(name = "packageId")
     @ManyToOne
@@ -19,8 +19,8 @@ public class Lunch {
     public Lunch() {
     }
 
-    public Lunch(String breakfastName, Package aPackage) {
-        this.breakfastName = breakfastName;
+    public Lunch(String lunchName, Package aPackage) {
+        this.lunchName = lunchName;
         this.aPackage = aPackage;
     }
 
@@ -32,19 +32,19 @@ public class Lunch {
         this.lunchId = lunchId;
     }
 
-    public String getBreakfastName() {
-        return breakfastName;
-    }
-
-    public void setBreakfastName(String breakfastName) {
-        this.breakfastName = breakfastName;
-    }
-
     public Package getaPackage() {
         return aPackage;
     }
 
     public void setaPackage(Package aPackage) {
         this.aPackage = aPackage;
+    }
+
+    public String getLunchName() {
+        return lunchName;
+    }
+
+    public void setLunchName(String lunchName) {
+        this.lunchName = lunchName;
     }
 }

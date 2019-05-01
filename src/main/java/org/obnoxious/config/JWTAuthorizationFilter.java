@@ -31,11 +31,12 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         chain.doFilter(req, res);
     }
-    private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
+    private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) throws IOException {
         String token = request.getHeader(HEADER_STRING);
+        String user = "";
         if (token != null) {
             // parse the token.
-            String user = Jwts.parser()
+            user = Jwts.parser()
                     .setSigningKey(SECRET)
                     .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
                     .getBody()

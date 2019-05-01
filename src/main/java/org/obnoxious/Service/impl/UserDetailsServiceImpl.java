@@ -1,12 +1,18 @@
 package org.obnoxious.Service.impl;
 
 import org.obnoxious.entities.ApplicationUser;
+import org.obnoxious.entities.Event;
+import org.obnoxious.entities.EventDateTime;
 import org.obnoxious.repositories.ApplicationUserRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
 import static java.util.Collections.emptyList;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -21,5 +27,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         return new User(applicationUser.getUsername(), applicationUser.getPassword(), emptyList());
+    }
+
+    public List<ApplicationUser> getAllUsers(){
+        return (List<ApplicationUser>) applicationUserRepository.findAll();
+    }
+
+    public ApplicationUser getUser(String username){
+        return applicationUserRepository.findByUsername(username);
     }
 }
