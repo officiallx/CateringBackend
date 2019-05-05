@@ -18,12 +18,12 @@ public class Staff {
     @Column(name = "staff_email")
     private String staffEmail;
 
+    @OneToOne
     @JoinColumn(name = "address")
-    @OneToOne(cascade = {CascadeType.ALL})
     private Address staffAddress;
 
+    @OneToOne
     @JoinColumn(name = "position")
-    @OneToOne(cascade = {CascadeType.ALL})
     private Position staffPosition;
 
     public Staff(){

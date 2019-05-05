@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -13,10 +14,13 @@ public class EventDateTime {
     @GeneratedValue
     @Column(name = "event_dat_id")
     private Long eventDatId;
+    @NotNull
     @Column(name = "event_date")
     private String eventDate;
+    @NotNull
     @Column(name = "event_time")
     private String eventTime;
+    @NotNull
     @Column(name = "guest_count")
     private String guest_count;
 

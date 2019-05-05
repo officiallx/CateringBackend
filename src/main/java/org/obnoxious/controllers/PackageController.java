@@ -69,6 +69,6 @@ public class PackageController {
         aPackage.setEvent(new Event(eventId,"",""));
         packageService.addPackage(aPackage);
 
-        return new AppResponse(AppConstants.SUCCESS_CODE, AppConstants.SUCCESS_MSG);
+        return new AppResponse(AppConstants.SUCCESS_CODE, AppConstants.PKG_SUCCESS_MSG);
     }
 }

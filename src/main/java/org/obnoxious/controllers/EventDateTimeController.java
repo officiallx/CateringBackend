@@ -37,7 +37,7 @@ public class EventDateTimeController {
     }
 
     @PostMapping("/datetime")
-    public void addEventTime(@RequestBody EventDateTime datetime){
-        eventDateTimeService.addEvent(datetime);
+    public EventDateTime addEventTime(@RequestBody EventDateTime datetime){
+        return eventDateTimeService.addEvent(datetime);
     }
 }

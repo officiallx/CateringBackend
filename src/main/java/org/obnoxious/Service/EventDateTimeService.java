@@ -22,8 +22,8 @@ public class EventDateTimeService {
         return eventDateTimeRepository.findById(eventDatId);
     }
 
-    public void addEvent(EventDateTime event){
-        eventDateTimeRepository.save(event);
+    public EventDateTime addEvent(EventDateTime event){
+        return eventDateTimeRepository.save(event);
     }
 
     public void updateEvent(EventDateTime event) {

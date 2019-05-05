@@ -1,6 +1,7 @@
 package org.obnoxious.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "orders")
@@ -10,31 +11,39 @@ public class Order {
     @GeneratedValue
     private Long OrderId;
 
-    /*@OneToMany(cascade = CascadeType.ALL)
-    @Valid
-    private List<Package> packages = new ArrayList<>();*/
-
     private String packageName;
 
+    @NotNull
     private String eventVenue;
 
+    @NotNull
     private String eventAddress;
 
-    @JoinColumn(name = "user_id")
-    private Long userId;
+    @NotNull
+    private String eventName;
 
-   /* @JoinColumn
-    @OneToOne(cascade = CascadeType.ALL)
-    private Package aPackage;*/
+    private String selectedService;
+
+    @OneToOne
+    @JoinColumn(name = "event_date_time")
+    private EventDateTime eventDateTime;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private ApplicationUser userId;
+
 
     public Order() {
     }
 
-    public Order(String packageName, String eventVenue, String eventAddress, Long userId) {
+    public Order(String packageName, String eventVenue, String eventAddress, String eventName, String selectedService, EventDateTime eventDateTime, ApplicationUser userId1) {
         this.packageName = packageName;
         this.eventVenue = eventVenue;
         this.eventAddress = eventAddress;
-        this.userId = userId;
+        this.eventName = eventName;
+        this.selectedService = selectedService;
+        this.eventDateTime = eventDateTime;
+        this.userId = userId1;
     }
 
     public String getPackageName() {
@@ -69,11 +78,35 @@ public class Order {
         this.eventAddress = eventAddress;
     }
 
-    public Long getUserId() {
+    public ApplicationUser getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(ApplicationUser userId) {
         this.userId = userId;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public EventDateTime getEventDateTime() {
+        return eventDateTime;
+    }
+
+    public void setEventDateTime(EventDateTime eventDateTime) {
+        this.eventDateTime = eventDateTime;
+    }
+
+    public String getSelectedService() {
+        return selectedService;
+    }
+
+    public void setSelectedService(String selectedService) {
+        this.selectedService = selectedService;
     }
 }

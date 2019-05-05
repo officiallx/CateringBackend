@@ -37,7 +37,7 @@ public class OrderController {
     }
 
     @PostMapping("/order")
-    public void addOrder(@RequestBody Order order) {
-        orderService.addOrder(order);
+    public Order addOrders(@RequestBody Order order) {
+       return orderService.addOrder(order);
     }
 }
