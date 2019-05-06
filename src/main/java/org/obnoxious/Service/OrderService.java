@@ -1,7 +1,7 @@
 package org.obnoxious.Service;
 
+import org.obnoxious.entities.ApplicationUser;
 import org.obnoxious.entities.Order;
-import org.obnoxious.entities.Staff;
 import org.obnoxious.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

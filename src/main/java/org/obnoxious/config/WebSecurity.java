@@ -25,7 +25,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/users/{username}").permitAll()
                 .antMatchers("/uploads/**").permitAll()
                 //.antMatchers("/api/events","/api/events{eventId}/packages").permitAll()
-                .anyRequest().authenticated()
+                //.anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()));
