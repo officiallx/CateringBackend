@@ -28,6 +28,12 @@ public class PackageController {
     @Autowired
     FileStorageService fileStorageService;
 
+    @GetMapping("/event/getAll")
+    public Iterable<Package> getAll(){
+        return packageService.getAll();
+    }
+
+
     @GetMapping("/event/{eventId}/packages")
     public List<Package> getAllPackages(@PathVariable Long eventId){
         return packageService.getAllPackages(eventId);

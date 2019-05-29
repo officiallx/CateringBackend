@@ -14,6 +14,8 @@ public class PackageService {
     @Autowired
     private PackageRepository packageRepository;
 
+    public Iterable<Package> getAll(){ return packageRepository.findAll(); }
+
     public List<Package> getAllPackages(Long packageId){
         return packageRepository.findByEvent_EventId(packageId);
     }

@@ -24,8 +24,9 @@ public class BreakfastController {
         return breakfastService.getBreakfast(apackageId);
     }
 
-    @DeleteMapping("/breakfast/{packageId}")
+    @GetMapping("/breakfast/delete/{packageId}")
     public void deleteItem(@PathVariable Long packageId){
+        System.out.println(packageId);
         breakfastService.deleteBreakfast(packageId);
     }
 
