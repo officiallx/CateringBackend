@@ -68,7 +68,7 @@ public class PackageController {
             throws IOException {
 
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("http://192.168.100.24:8080").path(AppConstants.DOWNLOAD_PATH)
+        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("http://192.168.100.162:8080").path(AppConstants.DOWNLOAD_PATH)
                 .path(fileName).toUriString();
         Package aPackage = objectMapper.readValue(eventJson, Package.class);
         aPackage.setProfilePath(fileDownloadUri);
