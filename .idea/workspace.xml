@@ -31,8 +31,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/obnoxious/config/JWTAuthenticationFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="203">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,11 +131,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/utils/AppConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/config/SecurityConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/config/JWTAuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/config/JWTAuthorizationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/config/WebSecurity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/config/CorsConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/config/CORSFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/obnoxious/config/JWTAuthenticationFilter.java" />
       </list>
     </option>
   </component>
@@ -272,7 +275,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583877120637" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583877694322" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../angularFrontend" />
   </component>
   <component name="RunDashboard">
@@ -323,12 +326,12 @@
       <workItem from="1583443604607" duration="389000" />
       <workItem from="1583531499327" duration="1289000" />
       <workItem from="1583686181922" duration="2232000" />
-      <workItem from="1583867317253" duration="8605000" />
+      <workItem from="1583867317253" duration="9359000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22271000" />
+    <option name="totallyTimeSpent" value="23025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -774,8 +777,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/obnoxious/config/JWTAuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state relative-caret-position="203">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
