@@ -39,7 +39,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()))
                 .httpBasic();
-        //http.cors();
+        http.cors();
     }
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
