@@ -13,6 +13,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import static org.obnoxious.config.SecurityConstants.LOGIN_URL;
 import static org.obnoxious.config.SecurityConstants.SIGN_UP_URL;
 
 @EnableWebSecurity
@@ -29,7 +30,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
-                .antMatchers("/login").permitAll()
+                .antMatchers(HttpMethod.POST, LOGIN_URL).permitAll()
                 .antMatchers("/api/users/{username}").permitAll()
                 .antMatchers("/uploads/**").permitAll()
                 //.antMatchers("/api/events","/api/events{eventId}/packages").permitAll()
