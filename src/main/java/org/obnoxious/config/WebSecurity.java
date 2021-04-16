@@ -25,7 +25,7 @@ import static org.obnoxious.config.SecurityConstants.SIGN_UP_URL;
 public class WebSecurity extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsServices;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-    public WebSecurity(@Qualifier("inMemoryUserDetailsManager") UserDetailsService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public WebSecurity(@Qualifier("userDetailsServiceImpl") UserDetailsService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userDetailsServices = userDetailsService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
