@@ -4,13 +4,14 @@ import org.obnoxious.Service.EventDateTimeService;
 import org.obnoxious.entities.EventDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com:4200" }, allowedHeaders="*")
 @RequestMapping("/api")
-@CrossOrigin(origins= {"http://localhost:4200" }, allowedHeaders="*")
 public class EventDateTimeController {
 
     @Autowired

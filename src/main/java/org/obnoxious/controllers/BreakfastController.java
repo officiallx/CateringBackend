@@ -4,11 +4,12 @@ import org.obnoxious.Service.BreakfastService;
 import org.obnoxious.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
 @RestController
+@CrossOrigin(origins="https://cateringwebsite.herokuapp.com:4200", allowedHeaders="*")
 @RequestMapping("/api")
-@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class BreakfastController {
 
     @Autowired

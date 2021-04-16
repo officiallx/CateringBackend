@@ -11,14 +11,15 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins="https://cateringwebsite.herokuapp.com:4200", allowedHeaders="*")
 @RequestMapping("/api")
-@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class PackageController {
 
     @Autowired
@@ -68,7 +69,7 @@ public class PackageController {
             throws IOException {
 
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("http://192.168.100.162:8080").path(AppConstants.DOWNLOAD_PATH)
+        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("https://e-catering.herokuapp.com").path(AppConstants.DOWNLOAD_PATH)
                 .path(fileName).toUriString();
         Package aPackage = objectMapper.readValue(eventJson, Package.class);
         aPackage.setProfilePath(fileDownloadUri);
