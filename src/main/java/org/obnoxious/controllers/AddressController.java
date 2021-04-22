@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins="https://cateringwebsite.herokuapp.com:443", allowedHeaders="*")
+@CrossOrigin(origins="https://cateringwebsite.herokuapp.com/", allowedHeaders="*")
 @RequestMapping("/api")
 public class AddressController {
 

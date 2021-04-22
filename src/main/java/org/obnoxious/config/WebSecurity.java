@@ -29,7 +29,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         this.userDetailsServices = userDetailsService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
-    @CrossOrigin(origins="https://cateringwebsite.herokuapp.com:443", allowedHeaders="*")
+    @CrossOrigin(origins="https://cateringwebsite.herokuapp.com/", allowedHeaders="*")
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
