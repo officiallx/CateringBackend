@@ -30,15 +30,15 @@ public class CORSFilter implements Filter {
     public CORSFilter() {
         log.info("SimpleCORSFilter init");
         allowedOrigins = new ArrayList<>();
-        allowedOrigins.add("https://cateringwebsite.herokuapp.com/");
-        allowedOrigins.add("https://e-catering.herokuapp.com/");
+        allowedOrigins.add("https://cateringwebsite.herokuapp.com");
+        allowedOrigins.add("https://e-catering.herokuapp.com");
     }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpServletRequest request = (HttpServletRequest) req;
-        response.setHeader("Access-Control-Allow-Origin", "https://cateringwebsite.herokuapp.com/");
+        response.setHeader("Access-Control-Allow-Origin", "https://cateringwebsite.herokuapp.com");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
         response.setHeader("Access-Control-Max-Age", "4800");
 //        response.setHeader("Access-Control-Allow-Headers", "x-requested-with, authorization, x-auth-token, origin, content-type, accept");

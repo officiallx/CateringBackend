@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins="https://cateringwebsite.herokuapp.com/", allowedHeaders="*")
+@CrossOrigin(origins="https://cateringwebsite.herokuapp.com", allowedHeaders="*")
 @RequestMapping("/api")
 public class PackageController {
 
@@ -69,7 +69,7 @@ public class PackageController {
             throws IOException {
 
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("https://e-catering.herokuapp.com:443").path(AppConstants.DOWNLOAD_PATH)
+        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("https://e-catering.herokuapp.com").path(AppConstants.DOWNLOAD_PATH)
                 .path(fileName).toUriString();
         Package aPackage = objectMapper.readValue(eventJson, Package.class);
         aPackage.setProfilePath(fileDownloadUri);

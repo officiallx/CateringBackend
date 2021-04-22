@@ -20,7 +20,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     public JWTAuthorizationFilter(AuthenticationManager authManager) {
         super(authManager);
     }
-    @CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com/" }, allowedHeaders="*")
+    @CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com" }, allowedHeaders="*")
     @Override
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
