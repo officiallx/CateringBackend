@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com:4200" }, allowedHeaders="*")
+@CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com:443" }, allowedHeaders="*")
 @RequestMapping("/api")
 public class EventController {
 
@@ -58,7 +58,7 @@ public class EventController {
             throws IOException {
 
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("https://e-catering.herokuapp.com").path(AppConstants.DOWNLOAD_PATH)
+        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("https://e-catering.herokuapp.com:443").path(AppConstants.DOWNLOAD_PATH)
                 .path(fileName).toUriString();
         Event event = objectMapper.readValue(eventJson, Event.class);
         event.setProfilePath(fileDownloadUri);

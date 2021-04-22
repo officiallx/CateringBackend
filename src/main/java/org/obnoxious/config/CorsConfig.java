@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com:4200"}, allowedHeaders="*")
+@CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com:443"}, allowedHeaders="*")
 public class CorsConfig{
 
     @Bean

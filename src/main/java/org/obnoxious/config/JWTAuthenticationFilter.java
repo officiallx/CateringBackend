@@ -28,7 +28,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
-    @CrossOrigin(origins= {"http://localhost:4200" }, allowedHeaders="*")
+    @CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com:443" }, allowedHeaders="*")
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req,
                                                 HttpServletResponse res) throws AuthenticationException {
