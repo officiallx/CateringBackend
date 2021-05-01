@@ -11,7 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com" }, allowedHeaders="*")
+@CrossOrigin(origins= {"*" }, allowedHeaders="*")
 @RequestMapping("/api")
 public class UserController {
     @Autowired

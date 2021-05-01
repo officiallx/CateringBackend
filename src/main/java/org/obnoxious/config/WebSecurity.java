@@ -29,7 +29,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         this.userDetailsServices = userDetailsService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
-    @CrossOrigin(origins="https://cateringwebsite.herokuapp.com", allowedHeaders="*")
+    @CrossOrigin(origins={"*"}, allowedHeaders="*")
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -37,8 +37,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers("/**").permitAll()
-                .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
-                .antMatchers(HttpMethod.POST, LOGIN_URL).permitAll()
+                .antMatchers(HttpMethod.POST, "/**").permitAll()
+                .antMatchers(HttpMethod.PUT, "/**").permitAll()
                 .antMatchers("/api/users/{username}").permitAll()
                 .antMatchers("/uploads/**").permitAll()
                 //.antMatchers("/api/events","/api/events{eventId}/packages").permitAll()

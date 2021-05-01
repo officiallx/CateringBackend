@@ -18,7 +18,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EntityScan
 @EnableConfigurationProperties({ FileStorageProperties.class })
-@EnableSwagger2
 public class CrudBackendApplication extends SpringBootServletInitializer {
 
 	@Bean

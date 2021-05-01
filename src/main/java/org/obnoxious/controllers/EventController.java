@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins= {"https://cateringwebsite.herokuapp.com" }, allowedHeaders="*")
+@CrossOrigin(origins= {"*" }, allowedHeaders="*")
 @RequestMapping("/api")
 public class EventController {
 
