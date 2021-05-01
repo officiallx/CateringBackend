@@ -23,12 +23,12 @@ import java.util.Date;
 
 import static org.obnoxious.config.SecurityConstants.*;
 
+@CrossOrigin(origins= {"*"}, allowedHeaders="*")
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
-    @CrossOrigin(origins= {"*"}, allowedHeaders="*")
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req,
                                                 HttpServletResponse res) throws AuthenticationException {

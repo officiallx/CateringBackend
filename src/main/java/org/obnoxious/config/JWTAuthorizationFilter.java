@@ -16,11 +16,11 @@ import java.util.ArrayList;
 
 import static org.obnoxious.config.SecurityConstants.*;
 
+@CrossOrigin(origins= {"*" }, allowedHeaders="*")
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     public JWTAuthorizationFilter(AuthenticationManager authManager) {
         super(authManager);
     }
-    @CrossOrigin(origins= {"*" }, allowedHeaders="*")
     @Override
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
