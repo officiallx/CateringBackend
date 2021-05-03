@@ -58,7 +58,7 @@ public class EventController {
             throws IOException {
 
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("https://drive.google.com/drive/u/1/folders/1J3DrVw3FNjinK_45rtoaUO5uw-Po2EFF").path(AppConstants.DOWNLOAD_PATH)
+        String fileDownloadUri = ServletUriComponentsBuilder.fromPath("https://e-catering.herokuapp.com:443").path(AppConstants.DOWNLOAD_PATH)
                 .path(fileName).toUriString();
         Event event = objectMapper.readValue(eventJson, Event.class);
         event.setProfilePath(fileDownloadUri);
